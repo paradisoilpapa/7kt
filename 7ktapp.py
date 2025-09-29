@@ -214,9 +214,9 @@ if st.button("計算する", type="primary", use_container_width=True):
                 handicap_m = int(row["handicap_m"]),
                 avg_st = float(row["avg_st"]),
                 avg_raceT = float(row["avg_raceT"]),
-                top2_10 = float(row["top2_10"]),
-                good2 = float(row["good2"]),
-                wet2 = float(row["wet2"]),
+                top2_10 = float(row["top2_10"]) / 100.0 float(row["top2_10"]),
+                good2 = float(row["top2_10"]) / 100.0 float(row["good2"]),
+                wet2 = float(row["top2_10"]) / 100.0 float(row["wet2"]),
             ))
         except Exception:
             st.error("入力に数値/型の不整合がある行があります。確認してください。")
@@ -294,3 +294,4 @@ if st.button("計算する", type="primary", use_container_width=True):
 
 else:
     st.info("テーブルの値を調整して「計算する」を押してください。%は0..1で入力（例：57.1% → 0.571）。")
+
